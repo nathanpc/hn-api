@@ -2,7 +2,6 @@ require 'rubygems'
 require 'mongrel'
 require 'ruby-hackernews'
 require 'json'
-require 'yaml'
 
 require 'helpers/build_json.rb'
 

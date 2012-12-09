@@ -25,3 +25,14 @@ The little documentation of the API. It should be enough for a start.
     GET /section/home        # Retrieves the front page feed
     GET /section/ask/2       # Retrieves the first two pages of the Ask HN feed
     GET /section/new/page/2  # Retrieves the second page of the New feed
+
+### Comments
+
+`GET /comment/:method/:id`
+
+ - `method`: The name of the method ("list", "reply")
+ - `id`: ID for the post you want to comment or the comment ID you want to reply
+
+**Examples**
+
+	GET /comment/list/4812047  # Retrieves the the comments for the 4812047 post.
