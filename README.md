@@ -36,3 +36,17 @@ The little documentation of the API. It should be enough for a start.
 **Examples**
 
 	GET /comment/list/4812047  # Retrieves the the comments for the 4812047 post.
+
+### Voting
+
+`POST /vote/:target/:id/:comment_id`
+
+ - **Authentication Required**: Basic HTTP Auth
+ - `target`: The name of the target ("entry", "comment")
+ - `id`: ID for the entry
+ - `comment_id`: The ID for the comment to vote
+
+**Examples**
+
+	POST /vote/entry/4812047       # Up vote the 4812047 post.
+	POST /vote/comment/4812047/0   # Up vote the first comment in the 4812047 post.
