@@ -20,23 +20,14 @@ class Section < Mongrel::HttpHandler
 			json = { :entries => [] }
 			
 			if args[1] == "home"
-				entries = Entry.all
-				
-				unless args[2].nil?
-					begin
-						entries = Entry.all(Integer(args[2]))
-					rescue
-						if args[2] == "page"
-							# TODO: Implement pagging instead of just returning a lot of stuff from all the pages.
-						else
-							# TODO: Implement error.
-						end
-					end
-				end
-				
-				entries.each do |entry|
-					json[:entries].push(BuildJSON.entry(entry))
-				end
+				# Requested the Front Page
+				BuildJSON.entry("all", args, json)
+			elsif args[1] == "new"
+				# Requested the New Page
+				BuildJSON.entry("newest", args, json)
+			elsif args[1] == "ask"
+				# Requested the Ask Page
+				BuildJSON.entry("questions", args, json)
 			else
 				json = { :error => "Undefined argument for /#{args[0]}, valid ones are /#{args[0]}/home, /#{args[0]}/new, /#{args[0]}/ask" }
 			end
