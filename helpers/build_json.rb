@@ -25,6 +25,7 @@ class BuildJSON
 		entries.each do |entry|
 			json[:entries].push({
 				:index => entry.number,
+				:id => entry.id,
 				:title => entry.link.title,
 				:link => {
 					:site => entry.link.site,
