@@ -28,14 +28,15 @@ The little documentation of the API. It should be enough for a start.
 
 ### Comments
 
-`GET /comment/:method/:id`
+`GET/POST /comment/:method/:id`
 
  - `method`: The name of the method ("list", "reply")
  - `id`: ID for the post you want to comment or the comment ID you want to reply
 
 **Examples**
 
-	GET /comment/list/4812047  # Retrieves the the comments for the 4812047 post.
+	GET /comment/list/4812047    # Retrieves the the comments for the 4812047 post
+	POST /comment/entry/4812047  # Add a comment to the 4812047 post
 
 ### Voting
 
@@ -49,4 +50,4 @@ The little documentation of the API. It should be enough for a start.
 **Examples**
 
 	POST /vote/entry/4812047       # Up vote the 4812047 post.
-	POST /vote/comment/4812047/0   # Up vote the first comment in the 4812047 post.
+	POST /vote/comment/4812047/0   # Up vote the first comment in the 4812047 post
