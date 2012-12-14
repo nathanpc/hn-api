@@ -43,7 +43,13 @@ class BuildJSON
 	
 	def self.comment(args, json)
 		# Getting the comments
-		comments = Entry.find(Integer(args[2])).comments
+		comments = nil
+		if args[2] == "entry"
+			comments = Entry.find(Integer(args[3])).comments
+		elsif args[2] == "comments"
+			comments = Comment.find(Integer(args[3]))
+		end
+
 		comments.each_with_index do |comment, index|
 			votes = comment.voting.score
 			if votes == nil
@@ -51,7 +57,7 @@ class BuildJSON
 			end
 
 			json[:comments].push({
-				:index => index,
+				:id => comment.id,
 				:user => comment.user.name,
 				:votes => votes,
 				:text => comment.text,
@@ -66,7 +72,7 @@ class BuildJSON
 				end
 
 				json[:comments][index][:replies].push({
-					:index => reply_index,
+					:id => reply.id,
 					:user => reply.user.name,
 					:votes => reply_votes,
 					:text => reply.text

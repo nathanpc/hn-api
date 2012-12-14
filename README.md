@@ -26,6 +26,8 @@ The little documentation of the API. It should be enough for a start.
     GET /section/ask/2       # Retrieves the first two pages of the Ask HN feed
     GET /section/new/page/2  # Retrieves the second page of the New feed
 
+---
+
 ### Comments
 
 `GET/POST /comment/:method/:id`
@@ -35,8 +37,12 @@ The little documentation of the API. It should be enough for a start.
 
 **Examples**
 
-	GET /comment/list/4812047    # Retrieves the the comments for the 4812047 post
-	POST /comment/entry/4812047  # Add a comment to the 4812047 post
+	GET /comment/list/entry/4812047     # Retrieves the the comments for the 4812047 post
+	GET /comment/list/comments/4901163  # Retrieves the the comments for the 4901163 comment
+	POST /comment/entry/4812047         # Add a comment to the 4812047 post
+	POST /comment/comment/4901163       # Add a reply to the 4901163 comment
+
+---
 
 ### Voting
 
