@@ -57,3 +57,23 @@ The little documentation of the API. It should be enough for a start.
 
 	POST /vote/entry/4812047       # Up vote the 4812047 post.
 	POST /vote/comment/4812047/0   # Up vote the first comment in the 4812047 post
+
+---
+
+### Posting
+
+`POST /submit`
+
+**POST Body**
+
+ - `title`: Post title
+ - `detail`: URL or text that will be included with the post
+
+**Examples**
+
+    POST /submit
+    
+    {
+        "title": "The best site on the internet",
+        "detail": "http://nathancampos.me/"
+    }
