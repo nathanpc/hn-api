@@ -5,7 +5,7 @@ require 'json'
 #require 'gabba'
 
 #require 'analytics.rb'
-require 'helpers/build_json.rb'
+require File.join(File.dirname(__FILE__), '..', 'helpers/build_json.rb')
 
 
 class Comment < Mongrel::HttpHandler
