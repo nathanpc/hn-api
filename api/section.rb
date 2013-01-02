@@ -4,7 +4,7 @@ require 'ruby-hackernews'
 require 'json'
 #require 'gabba'
 
-require 'analytics.rb'
+#require 'analytics.rb'
 require 'helpers/build_json.rb'
 
 

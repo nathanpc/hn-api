@@ -12,9 +12,11 @@ class BuildJSON
 			begin
 				# Requested more than just one page
 				entries = Entry.send(section, (Integer(args[2])))
+                puts "Requested more than just one page"
 			rescue
 				if args[2] == "page"
 					# Requested a specific page
+                    puts "Requested a spefic page."
 					entries = Entry.send(section, (Integer(args[3])))
 		
 					undesired_posts = (Integer(args[3]) - 1) * 30

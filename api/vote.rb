@@ -5,7 +5,7 @@ require 'json'
 require 'base64'
 #require 'gabba'
 
-require 'analytics.rb'
+#require 'analytics.rb'
 
 
 class Vote < Mongrel::HttpHandler
